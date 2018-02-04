@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import registerServiceWorker from './registerServiceWorker';
+import routerFactory from './common/router';
+import routes from './client/routes';
+import store from './client/store';
+
+const Router = routerFactory({ store, routes });
+
+ReactDOM.render(Router, document.getElementById('root'));
 registerServiceWorker();
