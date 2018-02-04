@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 
 import { composeContainers } from '../../../common/containers';
-import { projectsContainer } from '../../containers';
+import { projectsContainer, skillsContainer } from '../../containers';
 
 const styles = {};
 
@@ -11,13 +11,19 @@ class Projects extends Component {
 
     static propTypes = {
         projects: PropTypes.array.isRequired,
-
+        selectedSkills: PropTypes.array.isRequired,
         fetchProjects: PropTypes.func.isRequired,
         fetchProjectsWithSkills: PropTypes.func.isRequired
     };
 
     componentDidMount() {
         this.props.fetchProjects();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.selectedSkills !== nextProps.selectedSkills) {
+            this.props.fetchProjectsWithSkills({ skillIds: nextProps.selectedSkills });
+        }
     }
 
     render() {
@@ -35,4 +41,4 @@ class Projects extends Component {
 
 }
 
-export default composeContainers([ projectsContainer ], withStyles(styles)(Projects));
+export default composeContainers([ projectsContainer, skillsContainer ], withStyles(styles)(Projects));

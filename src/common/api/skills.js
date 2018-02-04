@@ -61,7 +61,7 @@
 // const SPENDING_WAY_TOO_LONG_NAMING_VARIABLES = "Spending Way Too Long Naming Variables";
 
 export const ANDROID = { id: 1, name: "Android", starred: true};
-export const IOS = { id: 2, name: IOS, starred: false};
+export const IOS = { id: 2, name: "iOS", starred: false};
 export const ANDROID_STUDIO = { id: 3, name: "Android Studio", starred: false};
 export const XCODE = { id: 4, name: "Xcode", starred: false};
 export const VS_CODE = { id: 41, name: "Visual Studio Code", starred: false};

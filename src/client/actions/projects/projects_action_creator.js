@@ -9,7 +9,6 @@ export function fetchProjects() {
         .then((projects) => {
             if (projects) {
                 dispatch(actions.fetchProjectsSuccess({ projects }));
-                return projects;
             } else {
                 dispatch(actions.fetchProjectsFailure(new Error(`Failed to get projects.`)));
             }
@@ -26,7 +25,6 @@ export function fetchProject({ id }) {
         .then((project) => {
             if (project) {
                 dispatch(actions.fetchProjectSuccess({ project }));
-                return project;
             } else {
                 dispatch(actions.fetchProjectFailure(new Error(`Failed to get project with id ${id}.`)));
             }

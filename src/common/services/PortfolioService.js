@@ -1,9 +1,13 @@
 import { getProjects } from '../api/projects';
+import { getSkills } from '../api/skills';
 
 export default class PortfolioService {
 
+    static fetchSkills() {
+        return Promise.resolve(getSkills());
+    }
+
     static fetchProjects() {
-        //TODO actually hit a server
         return Promise.resolve(getProjects());
     }
     
