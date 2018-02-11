@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import Grid from 'material-ui/Grid';
+import Hidden from 'material-ui/Hidden';
 import { withStyles } from 'material-ui/styles';
 import { grey } from 'material-ui/colors';
 
-import AboutMe from '../about_me';
-import Projects from '../projects';
-import Todos from '../todos';
+import ProfilePhoto from './ProfilePhoto';
+import AboutMe from './AboutMe';
+import Projects from './Projects';
+import Todos from './Todos';
 
 const styles = theme => ({
+    photoContainer: {
+        display: 'flex', 
+        justifyContent: 'center', 
+        marginTop: 24
+    },
     parentContainer: {
-        paddingBottom: 48
+        paddingBottom: 48,
+        paddingTop: 16
     },
     divider: {
         marginTop: 24,
@@ -29,8 +37,14 @@ class Home extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.parentContainer}>
-                <Grid container>
-                    <Grid item xs={1} md={2} lg={3} />
+                <Grid container spacing={0}>
+                    <Grid item xs={1} md={2} lg={3}>
+                        <Hidden smDown>
+                            <div className={classes.photoContainer}>
+                                <ProfilePhoto />
+                            </div>
+                        </Hidden>
+                    </Grid>
 
                     <Grid item xs={10} md={8} lg={6}>
                         <AboutMe />

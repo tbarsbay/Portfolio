@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
+import Hidden from 'material-ui/Hidden';
 import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
 import PlaceIcon from 'material-ui-icons/Place';
 import ArrowBackIcon from 'material-ui-icons/ArrowBack';
 import { withStyles } from 'material-ui/styles';
 import { grey } from 'material-ui/colors';
+
+import ProfilePhoto from './ProfilePhoto';
 
 const styles = theme => ({
     tidbitContainer: {
@@ -58,6 +61,10 @@ class AboutMe extends Component {
         const { classes } = this.props;
         return (
             <div>
+                <Hidden mdUp>
+                    <ProfilePhoto style={{marginTop: 24}}/>
+                </Hidden>
+
                 <Typography variant="display3">
                     tamer barsbay
                 </Typography>

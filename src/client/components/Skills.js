@@ -10,8 +10,8 @@ import ClearIcon from 'material-ui-icons/Clear';
 import { lightBlue, grey } from 'material-ui/colors';
 import Fade from 'material-ui/transitions/Fade';
 
-import { composeContainers } from '../../../common/containers';
-import { skillsContainer } from '../../containers';
+import { composeContainers } from '../../common/containers';
+import { skillsContainer } from '../containers';
 
 const styles = theme => ({
     chip: {
@@ -70,7 +70,7 @@ class Skills extends Component {
                     skills
                 </Typography>
 
-                <div style={{marginBottom: 24}}>
+                <div style={{display: 'flex', marginBottom: 8}}>
                     {showClearSelectionsButton && 
                         <Fade in={showClearSelectionsButton} timeout={200}>
                             <div style={{display: 'flex', alignItems: 'center'}} onClick={clearSkillSelections}>
@@ -126,7 +126,7 @@ class Skill extends PureComponent {
         classes: PropTypes.object.isRequired
     };
 
-    onClick = () => {
+    onClick = (event) => {
         const { selected, onSelect, onUnselect, skill } = this.props;
         if (selected) {
             onUnselect(skill);

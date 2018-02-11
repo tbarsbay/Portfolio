@@ -6,9 +6,9 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import { } from 'material-ui/colors'
 
-import { composeContainers } from '../../../common/containers';
-import { projectsContainer, skillsContainer } from '../../containers';
-import Skills from '../skills';
+import { composeContainers } from '../../common/containers';
+import { projectsContainer, skillsContainer } from '../containers';
+import Skills from './Skills';
 
 const styles = theme => ({
     projectImage: {
