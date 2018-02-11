@@ -2,12 +2,40 @@ import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
-import { blue } from 'material-ui/colors';
+import Chip from 'material-ui/Chip';
+import Avatar from 'material-ui/Avatar';
+import Typography from 'material-ui/Typography';
+import DoneIcon from 'material-ui-icons/Done';
+import StarIcon from 'material-ui-icons/Star';
+import ClearIcon from 'material-ui-icons/Clear';
+import { lightBlue, grey } from 'material-ui/colors';
+import Fade from 'material-ui/transitions/Fade';
 
 import { composeContainers } from '../../../common/containers';
 import { skillsContainer } from '../../containers';
 
-const styles = {};
+const styles = theme => ({
+    chip: {
+        margin: theme.spacing.unit / 2,
+        fontSize: 12
+    },
+    selectedChip: {
+        color: 'white',
+        background: theme.palette.secondary['500']
+    },
+    selectedIcon: {
+        width: 16,
+        height: 16,
+        fill: 'white'
+    },
+    clearSelectionsIcon: {
+        width: 16,
+        height: 16,
+        marginLeft: 4,
+        marginBottom: 1,
+        fill: grey[500]
+    }
+});
 
 class Skills extends Component {
 
@@ -23,10 +51,6 @@ class Skills extends Component {
     componentDidMount() {
         this.props.fetchSkills();
     }
-
-    onClickSkill = skill => () => {
-        console.log(`on click skill ${skill.name}`);
-    }
  
     render() {
         const { 
@@ -34,24 +58,55 @@ class Skills extends Component {
             selectedSkills,
             selectSkill,
             unselectSkill,
-            clearSkillSelections
+            clearSkillSelections,
+            classes
         } = this.props;
+
+        const showClearSelectionsButton = selectedSkills.length > 0;
+        const clearFiltersLabel = selectedSkills.length === 1 ? 'clear filter' : 'clear filters';
+
         return (
-            <div>
-                <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <div style={{marginBottom: 24}}>
+                <Typography variant="display1" className={classes.title}>
+                    skills
+                </Typography>
+
+                <div style={{marginBottom: 24}}>
+                    {showClearSelectionsButton && 
+                        <Fade in={showClearSelectionsButton} timeout={200}>
+                            <div style={{display: 'flex', alignItems: 'center'}} onClick={clearSkillSelections}>
+                                <Typography>
+                                    {clearFiltersLabel}
+                                </Typography>
+
+                                <ClearIcon className={classes.clearSelectionsIcon} />
+                            </div>
+                        </Fade>
+                    }
+
+                    {!showClearSelectionsButton && 
+                        <Fade in={!showClearSelectionsButton} timeout={200}>
+                            <div>
+                                <Typography>
+                                    select a skill to filter projects
+                                </Typography>
+                            </div>
+                        </Fade>
+                    }
+                </div>
+
+                <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
                     {skills.map((skill) => (
-                        <Skill key={skill.id}
+                        <Skill
+                            key={skill.id}
                             skill={skill}
                             selected={selectedSkills.includes(skill.id)}
                             onSelect={selectSkill}
                             onUnselect={unselectSkill}
+                            classes={classes}
                         />
                     ))}
                 </div>
-
-                <Button onClick={clearSkillSelections}>
-                    {'Clear Selections'}
-                </Button>
             </div>
         );
     }
@@ -62,11 +117,14 @@ class Skill extends PureComponent {
 
     static propTypes = {
         skill: PropTypes.shape({
-            name: PropTypes.string.isRequired
+            name: PropTypes.string.isRequired,
+            starred: PropTypes.bool,
+            visible: PropTypes.bool
         }).isRequired,
         selected: PropTypes.bool.isRequired,
         onSelect: PropTypes.func.isRequired,
-        onUnselect: PropTypes.func.isRequired
+        onUnselect: PropTypes.func.isRequired,
+        classes: PropTypes.object.isRequired
     };
 
     onClick = () => {
@@ -79,13 +137,23 @@ class Skill extends PureComponent {
     }
 
     render() {
-        const { skill, selected } = this.props;
-        const color = selected ? blue[500] : 'black';
-        return (
-            <Button onClick={this.onClick} style={{color}}>
-                {skill.name}
-            </Button>
-        );
+        const { skill, selected, classes } = this.props;
+        const avatarStyle = selected ? {backgroundColor: lightBlue[500]} : {};
+        const deleteIcon = selected ? <DoneIcon className={classes.selectedIcon} /> : <div style={{paddingLeft: 4}} />;
+        const avatar = skill.starred ? <Avatar style={avatarStyle}><StarIcon style={{fill: 'white'}}/></Avatar> : null;
+        const classNames = selected ? `${classes.chip} ${classes.selectedChip}` : `${classes.chip}`;
+        return !skill.visible 
+            ? null 
+            : (
+                <Chip
+                    avatar={avatar}
+                    label={skill.name}
+                    onClick={this.onClick}
+                    onDelete={this.onClick}
+                    deleteIcon={deleteIcon}
+                    className={classNames}
+                />
+            );
     }
 
 }

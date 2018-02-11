@@ -1,5 +1,5 @@
 import './skills';
-import { ANDROID, IOS, SQL, SWIFT, GIT, PYTHON, DAGGER2, GOOGLE_MAPS_API, CTA_API, REACT_NATIVE, ANDROID_STUDIO, XCODE, JAVASCRIPT, FIREBASE_CLOUD_MESSAGING, FIREBASE_ANALYTICS, ANDROID_SUPPORT_LIB, PLAY_SERVICES, MOCKITO, JUNIT, JENKINS, METABASE, FABRIC, TRELLO, PIVOTAL, GRADLE, LOCALYTICS, HOCKEYAPP, BRAINTREE, RETROFIT, RXJAVA, MATERIAL_DESIGN, SPENDING_WAY_TOO_LONG_NAMING_VARIABLES, GOOGLE_ANALYTICS, FIREBASE_DATABASE, FIREBASE_AUTH, FIREBASE_STORAGE, JAVA, VS_CODE, REACT_JS, REACT_ROUTER } from './skills';
+import { ANDROID, IOS, SQL, SWIFT, GIT, PYTHON, DAGGER2, GOOGLE_MAPS_API, CTA_API, REACT_NATIVE, ANDROID_STUDIO, XCODE, JAVASCRIPT, FIREBASE_CLOUD_MESSAGING, FIREBASE_ANALYTICS, ANDROID_SUPPORT_LIB, PLAY_SERVICES, MOCKITO, JUNIT, JENKINS, METABASE, FABRIC, TRELLO, PIVOTAL, GRADLE, LOCALYTICS, HOCKEYAPP, BRAINTREE, RETROFIT, RXJAVA, MATERIAL_DESIGN, SPENDING_WAY_TOO_LONG_NAMING_VARIABLES, GOOGLE_ANALYTICS, FIREBASE_DATABASE, FIREBASE_AUTH, FIREBASE_STORAGE, JAVA, VS_CODE, REACT_JS, REACT_ROUTER, REDUX } from './skills';
 
 const NOT_APPLICABLE_RESPONSIBILITY = -1;
 const NO_RESPONSIBILITY = 0;
@@ -70,7 +70,7 @@ var depot = {
     longDescription: "",
     thumbnailPhotoUrl: "",
     primaryPhotoUrl: "",
-    secondaryPhotos: [],
+    secondaryPhotoUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PRIMARY_RESPONSIBILITY,
@@ -103,7 +103,7 @@ var dropboxMaterial = {
     longDescription: "",
     thumbnailPhotoUrl: "",
     primaryPhotoUrl: "",
-    secondaryPhotos: [],
+    secondaryPhotoUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PRIMARY_RESPONSIBILITY,
@@ -127,7 +127,7 @@ var hopup = {
     longDescription: "",
     thumbnailPhotoUrl: "",
     primaryPhotoUrl: "",
-    secondaryPhotos: [],
+    secondaryPhotoUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PARTIAL_RESPONSIBILITY,
@@ -162,7 +162,7 @@ var luxuper = {
     longDescription: "",
     thumbnailPhotoUrl: "",
     primaryPhotoUrl: "",
-    secondaryPhotos: [],
+    secondaryPhotoUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PARTIAL_RESPONSIBILITY,
@@ -193,7 +193,7 @@ var hirewireWeb = {
     longDescription: "",
     thumbnailPhotoUrl: "",
     primaryPhotoUrl: "",
-    secondaryPhotos: [],
+    secondaryPhotoUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PRIMARY_RESPONSIBILITY,
@@ -210,9 +210,40 @@ var hirewireWeb = {
         TRELLO,
         REACT_ROUTER,
         MATERIAL_DESIGN,
-        SPENDING_WAY_TOO_LONG_NAMING_VARIABLES
+        SPENDING_WAY_TOO_LONG_NAMING_VARIABLES,
+        REDUX
     ]
 };
+
+var portfolio = {
+    id: 7,
+    title: "This Portfolio",
+    subtitle: "",
+    link: "", //TODO do something funny
+    shortDescription: "The portfolio you're currently looking at.",
+    longDescription: "",
+    thumbnailPhotoUrl: "",
+    primaryPhotoUrl: "",
+    secondaryPhotoUrls: [],
+    roles: {
+        development: PRIMARY_RESPONSIBILITY,
+        design: PRIMARY_RESPONSIBILITY,
+        productStrategy: PRIMARY_RESPONSIBILITY,
+        marketing: PRIMARY_RESPONSIBILITY,
+        analytics: PRIMARY_RESPONSIBILITY,
+        customerSupport: NO_RESPONSIBILITY
+    },
+    skills: [
+        VS_CODE,
+        JAVASCRIPT,
+        REACT_JS,
+        REDUX,
+        TRELLO,
+        REACT_ROUTER,
+        MATERIAL_DESIGN,
+        SPENDING_WAY_TOO_LONG_NAMING_VARIABLES
+    ]
+}
 
 export function getProjects() {
     return [
@@ -222,5 +253,6 @@ export function getProjects() {
         luxuper,
         hirewireWeb,
         dropboxMaterial,
+        portfolio
     ]
 }

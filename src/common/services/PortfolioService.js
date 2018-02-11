@@ -27,6 +27,7 @@ export default class PortfolioService {
     
     //TODO this is shitty, replace this with sql and a server
     static fetchProjectsWithSkills({ skillIds }) {
+        //TODO we can just make this fetchProjects and then only scroll through existing projectsWithSkills as more skills are added (to optimize)
         return new Promise((resolve, reject) => {
             let projects = getProjects();
             if (!skillIds || skillIds.length === 0) {
@@ -41,14 +42,12 @@ export default class PortfolioService {
                 for (var i = 0; i < numProjects; i++) {
                     let project = projects[i];
                     let projectSkillIds = project.skills.map(skill => skill.id);
-                    loop2:
-                        for (var j = 0; j < numSkills; j++) {
-                            let idToCheck = skillIds[j];
-                            if (!projectSkillIds.includes(idToCheck)) {
-                                console.log(`${project.title} doesnt have skill ${idToCheck}`)
-                                continue loop1;
-                            }
+                    for (var j = 0; j < numSkills; j++) {
+                        let idToCheck = skillIds[j];
+                        if (!projectSkillIds.includes(idToCheck)) {
+                            continue loop1;
                         }
+                    }
                     projectsToReturn.push(project);
                 }
             resolve(projectsToReturn);
