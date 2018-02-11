@@ -5,8 +5,8 @@ import { withStyles } from 'material-ui/styles';
 
 const styles = {
     photo: {
-        width: 150,
-        height: 150
+        width: '50%',
+        height: 'auto'
     }
 }
 
