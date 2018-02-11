@@ -1,7 +1,6 @@
 import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Button from 'material-ui/Button';
 import Chip from 'material-ui/Chip';
 import Avatar from 'material-ui/Avatar';
 import Typography from 'material-ui/Typography';

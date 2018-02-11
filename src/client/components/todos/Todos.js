@@ -47,6 +47,7 @@ class Todos extends Component {
 
                 <Todo title="deploy minimal but functional first version" completed classes={classes} />
                 <Todo title="implement redux" completed classes={classes} />
+                <Todo title="fill in project details" classes={classes} />
                 <Todo title="automate build and deployment process" classes={classes} />
                 <Todo title="pretty ui" classes={classes} />
                 <Todo title="look into typescript" classes={classes} />

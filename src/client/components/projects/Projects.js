@@ -1,7 +1,7 @@
 import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
-import Card, { CardHeader, CardContent, CardMedia } from 'material-ui/Card';
+import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import { } from 'material-ui/colors'
