@@ -75,21 +75,21 @@ class AboutMe extends Component {
 
                 <div className={classes.tidbitContainer}>
                     <Avatar className={classes.tidbitAvatar}>
-                        <SchoolIcon className={classes.tidbitIcon}/>
-                    </Avatar>
-
-                    <Typography variant="body2">
-                        University of Chicago, BS Mathematics
-                    </Typography>
-                </div>
-
-                <div className={classes.tidbitContainer}>
-                    <Avatar className={classes.tidbitAvatar}>
                         <WorkIcon className={classes.tidbitIcon}/>
                     </Avatar>
 
                     <Typography variant="body2">
                         Software Engineer at Hirewire
+                    </Typography>
+                </div>
+
+                <div className={classes.tidbitContainer}>
+                    <Avatar className={classes.tidbitAvatar}>
+                        <SchoolIcon className={classes.tidbitIcon}/>
+                    </Avatar>
+
+                    <Typography variant="body2">
+                        University of Chicago, BS Mathematics
                     </Typography>
                 </div>
 
