@@ -10,6 +10,8 @@ export const FETCH_PROJECTS_WITH_SKILLS_REQUEST = 'FETCH_PROJECTS_WITH_SKILLS_RE
 export const FETCH_PROJECTS_WITH_SKILLS_SUCCESS = 'FETCH_PROJECTS_WITH_SKILLS_SUCCESS';
 export const FETCH_PROJECTS_WITH_SKILLS_FAILURE = 'FETCH_PROJECTS_WITH_SKILLS_FAILURE';
 
+export const SELECT_PROJECT = 'SELECT_PROJECT';
+
 export function fetchProjectRequest(payload) {
     return {
         type: FETCH_PROJECT_REQUEST,
@@ -73,5 +75,12 @@ export function fetchProjectsWithSkillsFailure(error) {
     return {
         type: FETCH_PROJECTS_WITH_SKILLS_FAILURE,
         payload: error
+    };
+}
+
+export function selectProject(payload) {
+    return {
+        type: SELECT_PROJECT,
+        payload
     };
 }

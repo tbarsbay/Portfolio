@@ -7,7 +7,8 @@ import {
     FETCH_PROJECTS_FAILURE,
     FETCH_PROJECTS_WITH_SKILLS_REQUEST,
     FETCH_PROJECTS_WITH_SKILLS_SUCCESS,
-    FETCH_PROJECTS_WITH_SKILLS_FAILURE
+    FETCH_PROJECTS_WITH_SKILLS_FAILURE,
+    SELECT_PROJECT
 } from '../actions/projects/projects_actions';
 import { reducerFactory } from '../../common/reducer';
 
@@ -17,7 +18,8 @@ const INITIAL_STATE = {
     hasErrorLoadingProjects: false,
     hasErrorLoadingProject: false,
     project: {},
-    projects: []
+    projects: [],
+    selectedProject: null
 };
 
 const projectsReducer = {
@@ -29,7 +31,8 @@ const projectsReducer = {
     [FETCH_PROJECTS_FAILURE]: handleFetchProjectsFailure,
     [FETCH_PROJECTS_WITH_SKILLS_REQUEST]: handleFetchProjectsWithSkills,
     [FETCH_PROJECTS_WITH_SKILLS_SUCCESS]: handleFetchProjectsWithSkillsSuccess,
-    [FETCH_PROJECTS_WITH_SKILLS_FAILURE]: handleFetchProjectsWithSkillsFailure
+    [FETCH_PROJECTS_WITH_SKILLS_FAILURE]: handleFetchProjectsWithSkillsFailure,
+    [SELECT_PROJECT]: handleSelectProject
 };
 
 function handleFetchProject(state) {
@@ -37,7 +40,8 @@ function handleFetchProject(state) {
         ...state,
         isLoadingProject: true,
         hasErrorLoadingProject: false,
-        project: {}
+        project: {},
+        selectedProject: null
     };
 }
 
@@ -62,7 +66,8 @@ function handleFetchProjects(state) {
         ...state,
         isLoadingProjects: true,
         hasErrorLoadingProjects: false,
-        projects: []
+        projects: [],
+        selectedProject: null
     };
 }
 
@@ -104,6 +109,13 @@ function handleFetchProjectsWithSkillsFailure(state) {
         ...state,
         isLoadingProjects: false,
         hasErrorLoadingProjects: true
+    };
+}
+
+function handleSelectProject(state, { project }) {
+    return {
+        ...state,
+        selectedProject: project
     };
 }
 

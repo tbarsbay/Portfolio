@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { projectsActionCreator } from '../actions/projects';
+import { projectsActionCreator, projectsActions } from '../actions/projects';
 
 function mapStateToProps({ projects }) {
     return projects;
@@ -10,7 +10,9 @@ function mapDispatchToProps(dispatch) {
     return {
         fetchProjects: projectsActionCreator.fetchProjects,
         fetchProject: projectsActionCreator.fetchProject,
-        fetchProjectsWithSkills: projectsActionCreator.fetchProjectsWithSkills
+        fetchProjectsWithSkills: projectsActionCreator.fetchProjectsWithSkills,
+        selectProject: (project) => { dispatch(projectsActions.selectProject({ project })) },
+        unselectProject: () => { dispatch(projectsActions.selectProject({ project: null })) }
     }
 }
 
