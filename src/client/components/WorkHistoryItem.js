@@ -1,11 +1,22 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui';
+import Avatar from 'material-ui/Avatar';
 import Typography from 'material-ui/Typography';
+import { withStyles } from 'material-ui';
 
 const styles = theme => ({
     parentContainer: {
-        padding: 24
+        display: 'flex',
+        marginBottom: 24,
+        alignItems: 'center'
+    },
+    roleContainer: {
+        flex: 1
+    },
+    companyLogo: {
+        width: '5%',
+        height: 'auto',
+        marginRight: 16
     }
 });
 
@@ -18,8 +29,8 @@ class WorkHistoryItem extends PureComponent {
             logoUrl: PropTypes.string,
             link: PropTypes.string,
             description: PropTypes.string,
-            startDate: PropTypes.instanceOf(Date),
-            endDate: PropTypes.instanceOf(Date),
+            startDate: PropTypes.string.isRequired,
+            endDate: PropTypes.string,
             isPresent: PropTypes.bool.isRequired,
             city: PropTypes.string.isRequired,
             state: PropTypes.string.isRequired
@@ -27,17 +38,56 @@ class WorkHistoryItem extends PureComponent {
     };
 
     render() {
-        const { workHistory } = this.props;
+        const { workHistory, classes } = this.props;
 
         if (!workHistory) {
             return null;
         }
 
+        const {
+            roleTitle,
+            company,
+            startDate,
+            endDate,
+            isPresent,
+            city,
+            state,
+            logoUrl
+        } = workHistory;
+
+        var dates = `${startDate} - `;
+        if (!!isPresent) {
+            dates = dates + "Present";
+        } else if (endDate) {
+            dates = dates + endDate;
+        }
+
         return (
-            <div>
-                <Typography variant="title">
-                        {workHistory.roleTitle} at {workHistory.company}
-                </Typography>
+            <div className={classes.parentContainer}>
+                {logoUrl && 
+                    <img 
+                        src={process.env.PUBLIC_URL + logoUrl}
+                        className={classes.companyLogo}
+                    />
+                }
+
+                <div className={classes.roleContainer}>
+                    <Typography variant="subheading">
+                        {roleTitle}
+                    </Typography>
+                    <Typography variant="body1">
+                        {company}
+                    </Typography>
+                    <Typography variant="caption">
+                        {dates}
+                    </Typography>
+                </div>
+
+                <div>
+                    <Typography variant="caption">
+                        {city}, {state}
+                    </Typography>
+                </div>
             </div>
         );
     }
