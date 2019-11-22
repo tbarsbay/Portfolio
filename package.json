@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.13",
     "material-ui": "^1.0.0-beta.33",
     "material-ui-icons": "^1.0.0-beta.5",
     "prop-types": "^15.5.10",
