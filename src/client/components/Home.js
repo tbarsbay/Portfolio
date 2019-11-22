@@ -7,6 +7,7 @@ import { grey } from 'material-ui/colors';
 import ProfilePhoto from './ProfilePhoto';
 import AboutMe from './AboutMe';
 import Projects from './Projects';
+import WorkHistory from './WorkHistory';
 import Todos from './Todos';
 
 const styles = theme => ({
@@ -50,6 +51,8 @@ class Home extends Component {
                         <AboutMe />
                         {this.divider}
                         <Projects />
+                        {this.divider}
+                        <WorkHistory />
                         {this.divider}
                         <Todos />
                     </Grid>

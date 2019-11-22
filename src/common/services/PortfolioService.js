@@ -1,5 +1,6 @@
 import { getProjects } from '../api/projects';
 import { getSkills } from '../api/skills';
+import { getWorkHistory } from '../api/workhistory';
 
 export default class PortfolioService {
 
@@ -52,6 +53,10 @@ export default class PortfolioService {
                 }
             resolve(projectsToReturn);
         });
+    }
+
+    static fetchWorkHistory() {
+        return Promise.resolve(getWorkHistory());
     }
 
 }
