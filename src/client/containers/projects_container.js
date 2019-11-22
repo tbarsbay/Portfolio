@@ -13,7 +13,7 @@ function mapDispatchToProps(dispatch) {
         fetchProjectsWithSkills: projectsActionCreator.fetchProjectsWithSkills,
         selectProject: (project) => { dispatch(projectsActions.selectProject({ project })) },
         unselectProject: () => { dispatch(projectsActions.selectProject({ project: null })) }
-    }
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps);

@@ -13,13 +13,15 @@ const SKILL_PRIORITY_3 = 3;
 var hirewireMobile = {
     id: 1,
     title: "Hirewire",
-    subtitle: "",
-    link: "",
-    shortDescription: "",
-    longDescription: "",
-    thumbnailPhotoUrl: "",
-    primaryPhotoUrl: "",
-    secondaryPhotos: [],
+    link: "https://play.google.com/store/apps/details?id=com.hirewire.hirewire",
+    shortDescription: "An on-demand hiring app for the service industry.",
+    longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    primaryImageUrl: "https://lh3.googleusercontent.com/4GYQW1y9XWgq18ZStmJRstCzZ1hwrDmLVvGzYy2T9EhJnMGqhrNWeS66ZXdm9Qc_7QWh=w300-rw",
+    secondaryImageUrls: [
+        "https://lh3.googleusercontent.com/4GYQW1y9XWgq18ZStmJRstCzZ1hwrDmLVvGzYy2T9EhJnMGqhrNWeS66ZXdm9Qc_7QWh=w300-rw",
+        "https://lh3.googleusercontent.com/4GYQW1y9XWgq18ZStmJRstCzZ1hwrDmLVvGzYy2T9EhJnMGqhrNWeS66ZXdm9Qc_7QWh=w300-rw",
+        "https://lh3.googleusercontent.com/4GYQW1y9XWgq18ZStmJRstCzZ1hwrDmLVvGzYy2T9EhJnMGqhrNWeS66ZXdm9Qc_7QWh=w300-rw"
+    ],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PRIMARY_RESPONSIBILITY,
@@ -64,13 +66,11 @@ var hirewireMobile = {
 var depot = {
     id: 2,
     title: "Depot",
-    subtitle: "",
-    link: "",
-    shortDescription: "",
+    link: "https://play.google.com/store/apps/details?id=com.barsbay.transittrackerchicago",
+    shortDescription: "An easy-to-use but powerful tool for navigating Chicago with the CTA and Divvy bikes.",
     longDescription: "",
-    thumbnailPhotoUrl: "",
-    primaryPhotoUrl: "",
-    secondaryPhotoUrls: [],
+    primaryImageUrl: "",
+    secondaryImageUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PRIMARY_RESPONSIBILITY,
@@ -96,14 +96,12 @@ var depot = {
 
 var dropboxMaterial = {
     id: 3,
-    title: "Dropbox Material Concept",
-    subtitle: "",
+    title: "Dropbox Material Design Concept",
     link: "",
-    shortDescription: "",
+    shortDescription: "An unofficial redesign of Dropbox's Android app using Google's new (at the time) Material Design standards.",
     longDescription: "",
-    thumbnailPhotoUrl: "",
-    primaryPhotoUrl: "",
-    secondaryPhotoUrls: [],
+    primaryImageUrl: "",
+    secondaryImageUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PRIMARY_RESPONSIBILITY,
@@ -121,13 +119,11 @@ var dropboxMaterial = {
 var hopup = {
     id: 4,
     title: "HopUp",
-    subtitle: "",
-    link: "",
-    shortDescription: "",
+    link: "https://play.google.com/store/apps/details?id=com.hopupapp.android",
+    shortDescription: "A marketplace for the airsoft community to buy, sell, and trade goods.",
     longDescription: "",
-    thumbnailPhotoUrl: "",
-    primaryPhotoUrl: "",
-    secondaryPhotoUrls: [],
+    primaryImageUrl: "",
+    secondaryImageUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PARTIAL_RESPONSIBILITY,
@@ -156,13 +152,11 @@ var hopup = {
 var luxuper = {
     id: 5,
     title: "LuXuper",
-    subtitle: "",
     link: "",
-    shortDescription: "",
+    shortDescription: "A community for car enthusiasts to explore the latest in the world of luxury and performance cars.",
     longDescription: "",
-    thumbnailPhotoUrl: "",
-    primaryPhotoUrl: "",
-    secondaryPhotoUrls: [],
+    primaryImageUrl: "",
+    secondaryImageUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PARTIAL_RESPONSIBILITY,
@@ -187,13 +181,11 @@ var luxuper = {
 var hirewireWeb = {
     id: 6,
     title: "Hirewire - Web",
-    subtitle: "",
     link: "",
     shortDescription: "",
     longDescription: "",
-    thumbnailPhotoUrl: "",
-    primaryPhotoUrl: "",
-    secondaryPhotoUrls: [],
+    primaryImageUrl: "",
+    secondaryImageUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PRIMARY_RESPONSIBILITY,
@@ -218,13 +210,11 @@ var hirewireWeb = {
 var portfolio = {
     id: 7,
     title: "This Portfolio",
-    subtitle: "",
-    link: "", //TODO do something funny
+    link: "http://www.tamerbarsbay.me/", //TODO do something funny
     shortDescription: "The portfolio you're currently looking at.",
     longDescription: "",
-    thumbnailPhotoUrl: "",
-    primaryPhotoUrl: "",
-    secondaryPhotoUrls: [],
+    primaryImageUrl: "",
+    secondaryImageUrls: [],
     roles: {
         development: PRIMARY_RESPONSIBILITY,
         design: PRIMARY_RESPONSIBILITY,

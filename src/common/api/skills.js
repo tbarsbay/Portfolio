@@ -1,6 +1,7 @@
 // ADD?
 // progressive web apps
 
+//TODO put into a database so we don't have to manually ID
 export const ANDROID = { id: 1, name: "Android", starred: true, visible: true};
 export const IOS = { id: 2, name: "iOS", starred: false, visible: true};
 export const ANDROID_STUDIO = { id: 3, name: "Android Studio", starred: false, visible: false};
@@ -9,7 +10,7 @@ export const VS_CODE = { id: 41, name: "VS Code", starred: false, visible: false
 export const PYTHON = { id: 5, name: "Python", starred: false, visible: true};
 export const JAVA = { id: 6, name: "Java", starred: true, visible: true};
 export const SWIFT = { id: 7, name: "Swift", starred: false, visible: true};
-export const KOTLIN = { id: 8, name: "Kotlin", starred: false, visible: true};
+export const KOTLIN = { id: 8, name: "Kotlin", starred: true, visible: true};
 export const SQL = { id: 9, name: "SQL", starred: false, visible: true};
 export const JAVASCRIPT = { id: 10, name: "Javascript", starred: false, visible: true};
 export const FIREBASE_DATABASE = { id: 11, name: "Firebase Database", starred: false};
@@ -19,7 +20,7 @@ export const FIREBASE_STORAGE = { id: 14, name: "Firebase Storage", starred: fal
 export const FIREBASE_ANALYTICS = { id: 15, name: "Firebase Analytics", starred: false};
 export const GOOGLE_ANALYTICS = { id: 16, name: "Google Analytics", starred: false};
 export const REACT_JS = { id: 17, name: "React", starred: true, visible: true};
-export const REACT_NATIVE = { id: 18, name: "React Native", starred: true, visible: true};
+export const REACT_NATIVE = { id: 18, name: "React Native", starred: false, visible: true};
 export const ANDROID_SUPPORT_LIB = { id: 19, name: "Android Support Library", starred: false};
 export const PLAY_SERVICES = { id: 20, name: "Play Services", starred: false};
 export const MOCKITO = { id: 21, name: "Mockito", starred: false};
@@ -34,15 +35,17 @@ export const LOCALYTICS = { id: 29, name: "Localytics", starred: false};
 export const HOCKEYAPP = { id: 30, name: "HockeyApp", starred: false};
 export const BRAINTREE = { id: 31, name: "Braintree", starred: false};
 export const RETROFIT = { id: 32, name: "Retrofit", starred: false, visible: false};
-export const RXJAVA = { id: 33, name: "RxJava", starred: false, visible: true};
+export const RXJAVA = { id: 33, name: "RxJava", starred: false, visible: false};
 export const REACT_ROUTER = { id: 34, name: "React Router", starred: false};
 export const DAGGER2 = { id: 35, name: "Dagger 2", starred: false};
 export const GOOGLE_MAPS_API = { id: 36, name: "Google Maps API", starred: false};
 export const CTA_API = { id: 37, name: "CTA API", starred: false};
 export const GIT = { id: 38, name: "Git", starred: false};
-export const MATERIAL_DESIGN = { id: 39, name: "Material Design", starred: true, visible: true};
+export const MATERIAL_DESIGN = { id: 39, name: "Material Design", starred: false, visible: true};
 export const SPENDING_WAY_TOO_LONG_NAMING_VARIABLES = { id: 40, name: "Spending Too Much Time Naming Variables", starred: false, visible: true};
 export const REDUX = { id: 42, name: "Redux", starred: false, visible: true};
+export const ANDROID_JETPACK = { id: 43, name: "Android Jetpack", starred: false, visible: false };
+export const NODE_JS = { id: 44, name: "Node.js", starred: false, visible: true };
 
 export function getSkills() {
     return [
@@ -57,6 +60,7 @@ export function getSkills() {
         KOTLIN,
         SQL,
         JAVASCRIPT,
+        NODE_JS,
         FIREBASE_DATABASE,
         FIREBASE_AUTH,
         FIREBASE_CLOUD_MESSAGING,
@@ -67,6 +71,7 @@ export function getSkills() {
         REACT_NATIVE,
         REDUX,
         ANDROID_SUPPORT_LIB,
+        ANDROID_JETPACK,
         PLAY_SERVICES,
         MOCKITO,
         JUNIT,
@@ -89,7 +94,7 @@ export function getSkills() {
         MATERIAL_DESIGN, 
         SPENDING_WAY_TOO_LONG_NAMING_VARIABLES
     ];
-};
+}
 
 export function getSkillGroups() {
     return [
@@ -113,7 +118,8 @@ export function getSkillGroups() {
                 PYTHON,
                 SQL,
                 SWIFT,
-                KOTLIN
+                KOTLIN,
+                NODE_JS
             ]
         },
         {
@@ -159,8 +165,9 @@ export function getSkillGroups() {
                 CTA_API,
                 SPENDING_WAY_TOO_LONG_NAMING_VARIABLES,
                 ANDROID_SUPPORT_LIB,
-                PLAY_SERVICES
+                PLAY_SERVICES,
+                ANDROID_JETPACK
             ]
         }
-    ]
+    ];
 }
