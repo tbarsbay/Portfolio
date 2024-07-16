@@ -79,7 +79,7 @@ class AboutMe extends Component {
                     </Avatar>
 
                     <Typography variant="body2">
-                        Android Engineer at Mailchimp
+                        Staff Android Engineer at Mailchimp
                     </Typography>
                 </div>
 

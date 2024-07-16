@@ -22,7 +22,7 @@ class ProfilePhoto extends PureComponent {
         return (
             <Avatar
                 alt="Tamer Barsbay"
-                src="/images/tamer_cropped.jpg"
+                src="/images/tamer_large.jpg"
                 className={classes.photo}
                 style={style}
             />

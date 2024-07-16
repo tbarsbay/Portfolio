@@ -28,8 +28,6 @@ const styles = theme => ({
     },
 });
 
-//TODO future places to move to?
-
 class Home extends Component {
 
     divider = <div className={this.props.classes.divider}/>;
@@ -49,12 +47,12 @@ class Home extends Component {
 
                     <Grid item xs={10} md={8} lg={6}>
                         <AboutMe />
-                        {this.divider}
-                        <Projects />
+                        {/* {this.divider} */}
+                        {/* <Projects /> */}
                         {this.divider}
                         <WorkHistory />
-                        {this.divider}
-                        <Todos />
+                        {/* {this.divider} */}
+                        {/* <Todos /> */}
                     </Grid>
 
                     <Grid item xs={1} md={2} lg={3} />
